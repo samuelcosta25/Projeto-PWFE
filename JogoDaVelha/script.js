@@ -55,11 +55,11 @@ tabuleiroIsFilled = function () {
 allElementsInSomeLine = function () {
     for (var i = 0; i < 7; i += 3) {
         if (tabuleiro[i] == 'X' && tabuleiro[i + 1] == 'X' && tabuleiro[i + 2] == 'X') {
-            alert(jogador1.nome + ' wins!!!');
+            alert(jogador1.nome + ' Venceu!!!');
             reset();
         }
         if (tabuleiro[i] == 'O' && tabuleiro[i + 1] == 'O' && tabuleiro[i + 2] == 'O') {
-            alert(jogador2.nome + ' wins!!!');
+            alert(jogador2.nome + ' Venceu!!!');
             reset();
         }
     }
@@ -69,11 +69,11 @@ allElementsInSomeLine = function () {
 allElementsInSomeColumn = function () {
     for (var i = 0; i < 3; i++) {
         if (tabuleiro[i] == 'X' && tabuleiro[i + 3] == 'X' && tabuleiro[i + 6] == 'X') {
-            alert(jogador1.nome + ' wins!!!');
+            alert(jogador1.nome + ' Venceu!!!');
             reset();
         }
         if (tabuleiro[i] == 'O' && tabuleiro[i + 3] == 'O' && tabuleiro[i + 6] == 'O') {
-            alert(jogador2.nome + ' wins!!!');
+            alert(jogador2.nome + ' Venceu!!!');
             reset();
         }
     }
@@ -84,11 +84,11 @@ allElementsInSomeColumn = function () {
 allElementsInSomeDiagonal = function () {
     if ((tabuleiro[0] == 'X' && tabuleiro[4] == 'X' && tabuleiro[8] == 'X') ||
         (tabuleiro[2] == 'X' && tabuleiro[4] == 'X' && tabuleiro[6] == 'X')) {
-        alert(jogador1.nome + ' wins!!!');
+        alert(jogador1.nome + ' Venceu!!!');
         reset();
     } else if ((tabuleiro[0] == 'O' && tabuleiro[4] == 'O' && tabuleiro[8] == 'O') ||
         (tabuleiro[2] == 'O' && tabuleiro[4] == 'O' && tabuleiro[6] == 'O')) {
-        alert(jogador2.nome + ' wins!!!');
+        alert(jogador2.nome + ' Venceu!!!');
         reset();
     }
 }
@@ -104,14 +104,14 @@ setOnCeil = function (cel, pos) {
         (jogadorAtual.forma == 0) ? jogadorAtual = jogador2 : jogadorAtual = jogador1;
         setLabelJogadorAtual();
 
-    } else alert('Ops. Already marked value for this =/');
+    } else alert('Opção já marcada, favor escolher outra!');
 
     allElementsInSomeLine();
     allElementsInSomeColumn();
     allElementsInSomeDiagonal();
 
     if (tabuleiroIsFilled()) {
-        alert('Nobody wins! :(. Try Again');
+        alert('Deu velha! Tente Novamente.');
         reset();
     }
 
